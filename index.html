@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GetPet - Find Your Perfect Pet</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1><i class="fas fa-paw"></i> GetPet</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="active">Home</a>
+                <a href="#pets">Find Pets</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h2>Find Your Perfect Companion</h2>
+                <p>Discover pets waiting for their forever homes</p>
+                <a href="#pets" class="cta-button">Start Your Search</a>
+            </div>
+        </section>
+
+        <section id="filters" class="filters-section">
+            <div class="filter-container">
+                <h3>Filter Pets</h3>
+                <div class="filter-group">
+                    <select id="animal-type">
+                        <option value="">Animal Type</option>
+                        <option value="dog">Dogs</option>
+                        <option value="cat">Cats</option>
+                        <option value="bird">Birds</option>
+                        <option value="rabbit">Rabbits</option>
+                    </select>
+
+                    <select id="size">
+                        <option value="">Size</option>
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                    </select>
+
+                    <select id="age">
+                        <option value="">Age</option>
+                        <option value="baby">Baby</option>
+                        <option value="young">Young</option>
+                        <option value="adult">Adult</option>
+                        <option value="senior">Senior</option>
+                    </select>
+
+                    <select id="gender">
+                        <option value="">Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <button id="search-btn" class="search-button">
+                    <i class="fas fa-search"></i> Find Pets
+                </button>
+            </div>
+        </section>
+
+        <section id="pets" class="pets-section">
+            <h2>Available Pets</h2>
+            <div class="pets-grid" id="pets-container">
+                <!-- Pet cards will be dynamically added here -->
+            </div>
+        </section>
+
+        <section id="featured-breeds" class="breeds-section">
+            <h2>Featured Breeds</h2>
+            <div class="breeds-grid" id="breeds-container">
+                <!-- Breed cards will be dynamically added here -->
+            </div>
+        </section>
+
+        <section id="adopted" class="adopted-pets-section">
+            <h2>Adopted Pets</h2>
+            <div class="pets-grid" id="adopted-pets-container">
+                <!-- Adopted pet cards will be dynamically added here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>GetPet</h3>
+                <p>Connecting pets with loving homes</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <div class="footer-links">
+                    <a href="#home"><i class="fas fa-home"></i> Home</a>
+                    <a href="#pets"><i class="fas fa-paw"></i> Find Pets</a>
+                    <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> Email: info@getpet.com</p>
+                    <p><i class="fas fa-phone"></i> Phone: (555) 123-4567</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Address: 123 Pet Street, Pet City</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 GetPet. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

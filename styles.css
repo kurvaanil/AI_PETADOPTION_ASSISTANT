@@ -1,0 +1,1033 @@
+/* Global Styles */
+:root {
+    --primary-color: #4A90E2;
+    --secondary-color: #2ECC71;
+    --text-color: #333;
+    --light-gray: #f5f5f5;
+    --border-radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo h1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary-color);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.logo .fa-paw {
+    color: #4CAF50;
+    font-size: 1.2em;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-color);
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    background: url('https://t4.ftcdn.net/jpg/03/83/45/91/360_F_383459167_DHkr83LNgVkjHUFN8IAmAxnjBJUf7eVB.jpg') center/contain;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 0 1rem;
+    margin-top: 80px;
+}
+
+.hero-content {
+    max-width: 800px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 50);
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0);
+    border-radius: 10px;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+}
+
+/* Filters Section */
+.filters-section {
+    padding: 4rem 5%;
+    background-color: var(--light-gray);
+}
+
+.filter-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.filter-container h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.filter-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    outline: none;
+}
+
+.search-button {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #27ae60;
+}
+
+/* Pets Section */
+.pets-section {
+    padding: 4rem 5%;
+}
+
+.pets-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.pets-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.pet-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    margin: 15px;
+    width: 100%;
+}
+
+.pet-card:hover {
+    transform: translateY(-5px);
+}
+
+.pet-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.pet-info {
+    padding: 15px;
+}
+
+.pet-info h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 1.5em;
+}
+
+.pet-details {
+    margin-bottom: 15px;
+}
+
+.pet-details p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.pet-details strong {
+    color: #333;
+    margin-right: 5px;
+}
+
+.pet-description {
+    margin-bottom: 15px;
+    color: #444;
+    font-size: 0.9em;
+    line-height: 1.4;
+    max-height: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.pet-actions {
+    text-align: center;
+}
+
+.adopt-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.adopt-btn:hover {
+    background-color: #45a049;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .pets-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .pets-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .pets-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Loading and Error States */
+.loading, .error, .no-pets-found {
+    text-align: center;
+    padding: 3rem;
+    grid-column: 1 / -1;
+}
+
+.loading {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.error {
+    color: #e74c3c;
+}
+
+.no-pets-found {
+    color: #666;
+}
+
+/* Loading Message */
+.loading-message {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.2em;
+    color: #666;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+/* Featured Breeds Section */
+.breeds-section {
+    padding: 4rem 5%;
+    background-color: var(--light-gray);
+}
+
+.breeds-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.breeds-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.breed-card {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.breed-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.breed-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.breed-card h3 {
+    padding: 1.5rem 1rem 0.5rem;
+    margin: 0;
+    color: var(--text-color);
+    font-size: 1.5rem;
+}
+
+.breed-card p {
+    padding: 0 1rem;
+    color: #666;
+    flex-grow: 1;
+}
+
+.breed-btn {
+    margin: 1.5rem 1rem;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    text-align: center;
+}
+
+.breed-btn:hover {
+    background-color: #3578c7;
+    transform: translateY(-2px);
+}
+
+.breed-btn i {
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 4rem 5% 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-links a i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+    transform: translateX(10px);
+}
+
+.footer-links a:hover i {
+    transform: scale(1.2);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+.contact-info p:hover {
+    transform: translateX(5px);
+}
+
+.contact-info i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.contact-info p:hover i {
+    transform: scale(1.2);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-links {
+        align-items: center;
+    }
+
+    .contact-info {
+        align-items: center;
+    }
+
+    .contact-info p {
+        justify-content: center;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+    
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 1rem;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links a {
+        padding: 0.5rem 1rem;
+    }
+
+    .filter-group {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Adopted Pets Section */
+.adopted-pets-section {
+    padding: 4rem 5%;
+    background-color: var(--light-gray);
+}
+
+.adopted-pets-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.adopted-pet-card {
+    position: relative;
+}
+
+.adopted-pet-card::before {
+    content: 'Adopted';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--secondary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    z-index: 1;
+}
+
+.pet-card .adopt-btn {
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.pet-card .adopt-btn:hover {
+    background-color: #27ae60;
+}
+
+.pet-card .adopt-btn i {
+    font-size: 1.1rem;
+}
+
+/* No adopted pets message */
+.no-adopted-pets {
+    text-align: center;
+    padding: 3rem;
+    color: #666;
+}
+
+/* Remove button for adopted pets */
+.remove-btn {
+    background-color: #e74c3c;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.remove-btn:hover {
+    background-color: #c0392b;
+}
+
+.remove-btn i {
+    font-size: 1.1rem;
+}
+
+/* Success and Error Messages */
+.success-message, .error-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    z-index: 1000;
+    animation: slideIn 0.3s ease-out;
+}
+
+.success-message {
+    background-color: #4CAF50;
+}
+
+.error-message {
+    background-color: #f44336;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Enhanced Login Page Styles */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-container::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: url('https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover;
+    opacity: 0.1;
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.login-box h2 {
+    text-align: center;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.login-box p {
+    text-align: center;
+    color: #718096;
+    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    color: #2d3748;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-left: 0.5rem;
+}
+
+.form-group input {
+    padding: 1rem 1.2rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group input::placeholder {
+    color: #a0aec0;
+}
+
+.login-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1.1rem;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.login-footer p {
+    color: #718096;
+    margin: 0;
+}
+
+.login-footer a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.login-footer a:hover {
+    color: #764ba2;
+}
+
+/* Responsive adjustments for login page */
+@media (max-width: 480px) {
+    .login-box {
+        padding: 2rem;
+        margin: 1rem;
+    }
+
+    .login-box h2 {
+        font-size: 1.8rem;
+    }
+
+    .form-group input {
+        padding: 0.8rem 1rem;
+    }
+
+    .login-btn {
+        padding: 0.9rem;
+    }
+}
+
+/* Adopted Pets Section */
+#adopted-pets-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+#adopted-pets-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.pet-card.adopted {
+    border: 2px solid #4CAF50;
+}
+
+.remove-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.remove-btn:hover {
+    background-color: #d32f2f;
+}
+
+.adopt-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .pet-card {
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    #adopted-pets-container {
+        padding: 10px;
+    }
+}
+
+/* Featured Pets Section */
+.featured-section {
+    padding: 4rem 5%;
+    background-color: #f8f9fa;
+}
+
+.featured-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.featured-pets-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.featured-pet-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.featured-pet-card:hover {
+    transform: translateY(-5px);
+}
+
+.featured-pet-card .featured-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff6b6b;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.featured-pet-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.featured-pet-info {
+    padding: 1.5rem;
+}
+
+.featured-pet-info h3 {
+    margin: 0 0 1rem 0;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.featured-pet-details {
+    margin-bottom: 1rem;
+}
+
+.featured-pet-details p {
+    margin: 0.5rem 0;
+    color: #666;
+}
+
+.featured-pet-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.featured-adopt-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.featured-adopt-btn:hover {
+    background-color: #45a049;
+}
+
+.featured-adopt-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Responsive adjustments for featured section */
+@media (max-width: 768px) {
+    .featured-pets-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .featured-pet-card img {
+        height: 200px;
+    }
+}
+
+/* Navigation Links */
+.nav-links a,
+.footer-links a {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-links a.active {
+    color: var(--primary-color);
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+/* Only show underline on hover for footer links */
+.footer-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.footer-links a:hover::after {
+    transform: scaleX(1);
+} 

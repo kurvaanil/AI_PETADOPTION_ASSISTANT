@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Pet Adoption</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated Pet Background */
+        .pet-background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .pet {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.7;
+            filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
+        }
+
+        .pet1 {
+            background-image: url('https://cdn-icons-png.flaticon.com/512/616/616408.png');
+            animation: float1 20s linear infinite;
+            top: 10%;
+            left: 5%;
+        }
+
+        .pet2 {
+            background-image: url('https://cdn-icons-png.flaticon.com/512/616/616430.png');
+            animation: float2 25s linear infinite reverse;
+            top: 30%;
+            right: 10%;
+        }
+
+        .pet3 {
+            background-image: url('https://cdn-icons-png.flaticon.com/512/616/616412.png');
+            animation: float3 18s linear infinite;
+            bottom: 20%;
+            left: 15%;
+        }
+
+        .pet4 {
+            background-image: url('https://cdn-icons-png.flaticon.com/512/616/616414.png');
+            animation: float4 22s linear infinite reverse;
+            top: 60%;
+            right: 20%;
+        }
+
+        .pet5 {
+            background-image: url('https://cdn-icons-png.flaticon.com/512/616/616416.png');
+            animation: float5 28s linear infinite;
+            bottom: 40%;
+            left: 25%;
+        }
+
+        .pet6 {
+            background-image: url('https://cdn-icons-png.flaticon.com/512/616/616418.png');
+            animation: float6 24s linear infinite reverse;
+            top: 15%;
+            right: 30%;
+        }
+
+        @keyframes float1 {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(150px, -50px) rotate(15deg); }
+            50% { transform: translate(300px, 0) rotate(0deg); }
+            75% { transform: translate(150px, 50px) rotate(-15deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+
+        @keyframes float2 {
+            0% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(-100px, -30px) scale(1.1); }
+            50% { transform: translate(-200px, 0) scale(1); }
+            75% { transform: translate(-100px, 30px) scale(0.9); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+
+        @keyframes float3 {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(120px, -40px) rotate(-15deg); }
+            50% { transform: translate(240px, 0) rotate(0deg); }
+            75% { transform: translate(120px, 40px) rotate(15deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+
+        @keyframes float4 {
+            0% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(-80px, -60px) scale(1.2); }
+            50% { transform: translate(-160px, 0) scale(1); }
+            75% { transform: translate(-80px, 60px) scale(0.8); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+
+        @keyframes float5 {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(100px, -70px) rotate(20deg); }
+            50% { transform: translate(200px, 0) rotate(0deg); }
+            75% { transform: translate(100px, 70px) rotate(-20deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+
+        @keyframes float6 {
+            0% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(-120px, -20px) scale(1.1); }
+            50% { transform: translate(-240px, 0) scale(1); }
+            75% { transform: translate(-120px, 20px) scale(0.9); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 450px;
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .login-header h1 {
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .login-header p {
+            color: #718096;
+            font-size: 1.1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2d3748;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 1.1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .login-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .social-login {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .social-login p {
+            color: #718096;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .social-login p::before,
+        .social-login p::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 30%;
+            height: 1px;
+            background: #e2e8f0;
+        }
+
+        .social-login p::before {
+            left: 0;
+        }
+
+        .social-login p::after {
+            right: 0;
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-button {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .google-button {
+            background-color: #DB4437;
+            color: white;
+        }
+
+        .facebook-button {
+            background-color: #4267B2;
+            color: white;
+        }
+
+        .social-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 2rem;
+                margin: 1rem;
+            }
+
+            .login-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .form-group input {
+                padding: 0.8rem 1rem;
+            }
+
+            .login-button {
+                padding: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="pet-background">
+        <div class="pet pet1"></div>
+        <div class="pet pet2"></div>
+        <div class="pet pet3"></div>
+        <div class="pet pet4"></div>
+        <div class="pet pet5"></div>
+        <div class="pet pet6"></div>
+    </div>
+
+    <div class="login-container">
+        <div class="login-header">
+            <h1>Welcome Back!</h1>
+            <p>Login to find your perfect pet</p>
+        </div>
+        <form id="loginForm" action="/login" method="POST">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="login-button">Login</button>
+        </form>
+        <div class="social-login">
+            <p>Or login with</p>
+            <div class="social-buttons">
+                <button type="button" class="social-button google-button">
+                    <i class="fab fa-google"></i> Google
+                </button>
+                <button type="button" class="social-button facebook-button">
+                    <i class="fab fa-facebook-f"></i> Facebook
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Social login buttons (placeholder functionality)
+        document.querySelector('.google-button').addEventListener('click', function() {
+            alert('Google login would be implemented here');
+        });
+
+        document.querySelector('.facebook-button').addEventListener('click', function() {
+            alert('Facebook login would be implemented here');
+        });
+    </script>
+</body>
+</html> 
